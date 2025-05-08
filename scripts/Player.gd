@@ -13,6 +13,8 @@ const UP = Vector2(0,-1)
 
 func get_input():
 	velocity.x = 0
+	if !is_on_floor():
+		particle.set_emitting(false)
 	if is_on_floor() and Input.is_action_just_pressed('jump'):
 		velocity.y = jump_speed
 	if Input.is_action_pressed('right'):
